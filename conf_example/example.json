@@ -1,0 +1,22 @@
+{
+  "nodes": [
+    {
+      "name": "apple.com",
+      "conf": {
+        "valid": true,
+        "title": "apple.com",
+        "arg": "https://www.apple.com.cn",
+        "autocomplete": "apple.com"
+      }
+    },
+    {
+      "name": "google.com",
+      "conf": {
+        "valid": true,
+        "title": "google.com",
+        "arg": "https://www.google.com",
+        "autocomplete": "google.com"
+      }
+    }
+  ]
+}
