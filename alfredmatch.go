@@ -3,13 +3,15 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/sahilm/fuzzy"
 	"os"
+
+	"github.com/sahilm/fuzzy"
 )
 
 type AlfredConf struct {
 	Valid        bool   `json:"valid"`
 	Title        string `json:"title"`
+	Subtitle     string `json:"subtitle"`
 	Arg          string `json:"arg"`
 	Autocomplete string `json:"autocomplete"`
 }
@@ -26,7 +28,7 @@ type AlfredConfig struct {
 }
 
 func (n AlfredNodes) String(i int) string {
-	return n[i].Conf.Title
+	return n[i].Name + "," + n[i].Conf.Title + "," + n[i].Conf.Subtitle + "," + n[i].Conf.Arg
 }
 
 func (n AlfredNodes) Len() int {
@@ -72,7 +74,6 @@ func displayError(errMsg string) {
 	return
 }
 
-
 func main() {
 	helpString := "usage: alfred <config filename>"
 	if len(os.Args) < 2 {
@@ -109,7 +110,6 @@ func main() {
 	} else {
 		matchNodes = config.Nodes
 	}
-
 
 	res := AlfredJson{}
 	for _, conf := range matchNodes {
