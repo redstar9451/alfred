@@ -103,6 +103,7 @@ func main() {
 	var matchNodes AlfredNodes
 	if len(os.Args) > 2 {
 		searchStr := os.Args[2]
+		// config.Nodes should implement the func String()
 		results := fuzzy.FindFrom(searchStr, config.Nodes)
 		for _, r := range results {
 			matchNodes = append(matchNodes, config.Nodes[r.Index])
