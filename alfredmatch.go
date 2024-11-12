@@ -14,6 +14,7 @@ type AlfredConf struct {
 	Subtitle     string `json:"subtitle"`
 	Arg          string `json:"arg"`
 	Autocomplete string `json:"autocomplete"`
+	QuickLookUrl string `json:"quicklookurl"`
 }
 
 type AlfredNode struct {
